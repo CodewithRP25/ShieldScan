@@ -1,186 +1,335 @@
-# 🛡️ ShieldScan
+# 🛡 ShieldScan
 
-> **AI Powered Phishing Link & Suspicious Message Detector**
+<div align="center">
 
-ShieldScan is a full-stack cybersecurity web application designed to help users identify phishing URLs and suspicious messages before interacting with them. It combines an intelligent rule-based detection engine with an AI-ready architecture that can be extended with machine learning models in the future.
+### AI Powered Phishing URL & Suspicious Message Detection Platform
 
-The project focuses on improving cybersecurity awareness by analyzing suspicious links and messages, assigning a threat level, calculating a risk score, and providing clear security recommendations.
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge\&logo=react)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge\&logo=vite)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge\&logo=node.js)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=for-the-badge\&logo=tailwindcss)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge\&logo=javascript)
+![License](https://img.shields.io/badge/License-Educational-blue?style=for-the-badge)
+
+AI-powered cybersecurity web application that helps users detect phishing URLs and suspicious messages using an intelligent rule-based detection engine with an AI-ready architecture.
+
+### 🌐 Live Demo
+
+**Website:** https://shield-scan-client.vercel.app
+
+**GitHub Repository:** https://github.com/CodewithRP25/ShieldScan
+
+</div>
 
 ---
 
-## ✨ Features
+# 📖 Overview
+
+Cyber threats such as phishing websites, fake login pages, scam messages, and social engineering attacks are increasing every day. Many users unknowingly click malicious links or respond to fraudulent messages, resulting in financial loss and compromised personal information.
+
+**ShieldScan** is designed to provide a simple, fast, and user-friendly platform where users can analyze suspicious URLs and messages before interacting with them. The system uses a rule-based phishing detection engine while maintaining an architecture that is ready for future AI integration.
+
+---
+
+# ✨ Features
 
 ### 🔗 URL Scanner
 
-* Detects insecure HTTP websites
-* Detects IP-based URLs
+* Detects suspicious URLs
+* Identifies phishing indicators
+* Checks insecure HTTP links
+* Detects URL shorteners
+* Detects suspicious keywords
 * Detects suspicious domain extensions
-* Detects shortened URLs
-* Detects phishing keywords
-* Detects excessive subdomains
-* Detects multiple hyphens
-* Detects numeric domains
-* Calculates Risk Score
-* Calculates Safety Score
-* Generates Detection Reasons
-* Provides Security Recommendation
+* Detects IP-based URLs
+* Provides confidence score
+* Provides safety score
+* Gives security recommendations
 
 ---
 
 ### 💬 Message Scanner
 
+* Analyzes Emails
+* Analyzes SMS
+* Analyzes WhatsApp messages
 * Detects phishing keywords
-* Detects urgency language
+* Detects urgency indicators
 * Detects suspicious links
 * Detects phone numbers
-* Calculates Risk Score
-* Calculates Safety Score
-* Generates Detection Reasons
-* Provides Security Recommendation
+* Calculates risk score
+* Provides confidence score
+* Gives safety recommendations
 
 ---
 
-### 📊 Detection Levels
+### 🛡 Additional Features
 
-* ✅ Safe
-* 🟡 Low Risk
-* 🟠 Suspicious
-* 🔴 Dangerous
-* ⚪ Invalid URL
+* Responsive UI
+* Modern Cybersecurity Theme
+* AI Ready Architecture
+* Rule-Based Detection Engine
+* Real-Time Scan Results
+* Detailed Detection Reasons
+* Live Threat Meter
+* Safety Score Visualization
+* Production Ready Deployment
 
 ---
 
-## 🛠️ Technology Stack
+# 🛠 Tech Stack
 
-### Frontend
+## Frontend
 
 * React 19
 * Vite
 * Tailwind CSS
-* React Router DOM
 * Framer Motion
+* React Router DOM
 * Axios
 * Lucide React
 
-### Backend
+## Backend
 
 * Node.js
 * Express.js
+* CORS
 * Helmet
 * Morgan
-* CORS
 * dotenv
+
+## Deployment
+
+* Vercel (Frontend)
+* Render (Backend)
+* GitHub (Version Control)
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 ShieldScan/
 │
 ├── client/
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── assets/
-│   │   └── App.jsx
+│   ├── public/
 │   └── package.json
 │
 ├── server/
 │   ├── src/
-│   │   ├── analyzers/
-│   │   ├── routes/
-│   │   ├── middleware/
-│   │   └── server.js
-│   └── package.json
+│   ├── package.json
+│   └── .env.example
+│
+├── docs/
+│   └── screenshots/
+│       ├── home.png
+│       ├── url-scanner.png
+│       ├── message-scanner.png
+│       └── about.png
 │
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙ Installation
 
-Clone the repository
+## Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/CodewithRP25/ShieldScan.git
 ```
 
-Install all dependencies
+---
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+or
 
 ```bash
 npm run install:all
 ```
 
-Run Backend
+---
+
+## Start Backend
 
 ```bash
-npm run dev:server
-```
-
-Run Frontend
-
-```bash
-npm run dev:client
+cd server
+npm install
+npm run dev
 ```
 
 ---
 
-## 🌐 API Endpoint
+## Start Frontend
 
-Health Check
+```bash
+cd client
+npm install
+npm run dev
+```
+
+---
+
+Frontend runs on:
+
+```text
+http://localhost:5173
+```
+
+Backend runs on:
+
+```text
+http://localhost:5000
+```
+
+---
+
+# 📡 API Endpoints
+
+## Health Check
 
 ```http
 GET /api/health
 ```
 
-Response
+Returns server status.
+
+---
+
+## URL Scanner
+
+```http
+POST /api/analyze/url
+```
+
+Request
 
 ```json
 {
-  "status": "Server Running"
+  "url": "https://example.com"
 }
 ```
 
 ---
 
+## Message Scanner
 
-## Direct App Commands
-
-Frontend:
-
-```bash
-cd ShieldScan/client
-npm install
-npm run dev
-npm run build
+```http
+POST /api/analyze/message
 ```
 
-Backend:
+Request
 
-```bash
-cd ShieldScan/server
-npm install
-npm run dev
-npm start
+```json
+{
+  "message": "Congratulations! You won ₹1,00,000."
+}
 ```
 
-## Current Pages
+---
 
-- Home
-- URL Scanner
-- Message Scanner
-- About
-- 404
+# 🌐 Live Deployment
 
-## Verification Checklist
+## Frontend
 
-- Client dependencies install successfully.
-- Server dependencies install successfully.
-- `npm run dev` starts the client from `client/`.
-- `npm run dev` starts the API from `server/` on port `5000`.
-- `GET /api/health` returns `{ "status": "Server Running" }`.
-- React Router renders all placeholder pages.
-- Tailwind styles load correctly.
+https://shield-scan-client.vercel.app
+
+## Backend
+
+https://shieldscan-n5as.onrender.com
+
+---
+
+---
+
+# 🖼 Application Screenshots
+
+## 🏠 Home Page
+
+![Home](docs/screenshots/home.png)
+
+---
+
+## 🔗 URL Scanner
+
+![URL Scanner](docs/screenshots/url-scanner.png)
+
+---
+
+## 💬 Message Scanner
+
+![Message Scanner](docs/screenshots/message-scanner.png)
+
+---
+
+## ℹ️ About Page
+
+![About](docs/screenshots/about.png)
+
+---
+
+# 🔮 Future Roadmap
+
+The following features are planned for future releases:
+
+* 🤖 AI-powered phishing explanation using Large Language Models (LLMs)
+* 🌐 VirusTotal API integration
+* 📊 Real-time threat intelligence feeds
+* 📱 QR Code Scanner
+* 🧾 Scan History Dashboard
+* 🧩 Browser Extension
+* 📈 Security Analytics Dashboard
+* 👥 User Authentication & Personal Dashboard
+
+---
+
+# 👨‍💻 Developed By
+
+**Ravi Patel**
+
+Diploma in Computer Engineering
+
+Government Polytechnic Vadnagar
+
+---
+
+# 🎯 Project Objectives
+
+* Detect phishing URLs before users visit malicious websites.
+* Analyze suspicious emails, SMS, and chat messages.
+* Improve cybersecurity awareness.
+* Provide simple and user-friendly phishing detection.
+* Build an AI-ready cybersecurity platform.
+
+---
+
+# 📜 License
+
+This project is developed for **educational and cybersecurity awareness purposes** as part of the **GTU Skill-Based Training Program (SBTP)**.
+
+It is intended for learning, demonstration, and academic use.
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+---
+
+<div align="center">
+
+### 🛡 ShieldScan
+
+**Building a Safer Digital Experience**
+
+Made with ❤️ by Ravi Patel
+
+</div>
