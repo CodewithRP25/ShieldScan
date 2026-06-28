@@ -1,25 +1,13 @@
-const API_BASE = "http://localhost:5000/api";
+import { apiClient } from "./apiClient";
 
 export async function analyzeMessage(message) {
-
-  const response = await fetch(`${API_BASE}/analyze/message`, {
-    method: "POST",
-
-    headers: {
-      "Content-Type": "application/json"
-    },
-
-    body: JSON.stringify({
+  try {
+    const response = await apiClient.post("/analyze/message", {
       message
-    })
+    });
 
-  });
-
-  const data = await response.json();
-
-  if (!response.ok) {
-    throw new Error(data.message || "Something went wrong.");
+    return response.data;
+  } catch (error) {
+    throw error;
   }
-
-  return data;
 }
